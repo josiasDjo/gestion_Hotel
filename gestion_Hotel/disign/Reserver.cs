@@ -43,5 +43,11 @@ namespace gestion_Hotel
                 txtMontant.Text = "Choisisez entre VIP et Standard";
             }
         }
+
+        private void searchOption_TextChanged(object sender, EventArgs e)
+        {
+            //string searchData = searchOption.Text;
+            rechercher();
+        }
     }
 }

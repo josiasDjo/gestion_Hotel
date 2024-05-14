@@ -33,7 +33,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.searchOption = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -105,13 +105,14 @@
             this.simpleButton1.Text = "Valider";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // richTextBox1
+            // searchOption
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(928, 421);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(268, 29);
-            this.richTextBox1.TabIndex = 47;
-            this.richTextBox1.Text = "... Search ...";
+            this.searchOption.Location = new System.Drawing.Point(928, 421);
+            this.searchOption.Name = "searchOption";
+            this.searchOption.Size = new System.Drawing.Size(268, 29);
+            this.searchOption.TabIndex = 47;
+            this.searchOption.Text = "";
+            this.searchOption.TextChanged += new System.EventHandler(this.searchOption_TextChanged);
             // 
             // dataGridView1
             // 
@@ -359,7 +360,7 @@
             this.Controls.Add(this.txtSexe);
             this.Controls.Add(this.txtDatePrevu);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.searchOption);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
@@ -392,7 +393,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox searchOption;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;

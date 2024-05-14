@@ -58,8 +58,14 @@
     <Compile Include="class\afficherData.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="class\changeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="class\connexion_BD.cs" />
     <Compile Include="class\insertData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="class\Search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="disign\Form1.cs">

@@ -1,26 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace gestion_Hotel
 {
     public partial class reserver
     {
-        public void afficherDataInGrid()
+        public void rechercher()
         {
             connexion_BD sqlconn = new connexion_BD();
             sqlconn.sendConn();
+            string searchD = searchOption.Text;
 
-            string req = "SELECT * FROM tReserver";
+            string req = "SELECT * FROM tReserver WHERE ";
+            req += "nom LIKE @search OR prenom LIKE @search OR tel LIKE @search OR numChambre LIKE @search OR typeChambre LIKE @search OR montant LIKE @search OR datePrevu LIKE @search OR nombreJours LIKE @search";
 
-            using (SqlCommand command = new SqlCommand(req, sqlconn.reqSql))
+            SqlCommand command = new SqlCommand(req, sqlconn.reqSql);
+
+            command.Parameters.AddWithValue("@search", "%" + searchD + "%");
+
+            try
             {
-                dataGridView1.Rows.Clear();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
+                    dataGridView1.Rows.Clear();
                     while (reader.Read())
                     {
                         string idReserverbd = reader["idReserver"].ToString();
@@ -40,6 +48,15 @@ namespace gestion_Hotel
                         dataGridView1.Rows.Add(idReserverbd, nombd, prenombd, sexebd, telbd, numChambrebd, nombreJoursbd, typeChambrebd, montantbd, datePrevubd);
 
                     }
+                }
+            } catch (Exception exc)
+            {
+                MessageBox.Show("Erreur : " + exc.Message);
+            } finally
+            {
+                if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
+                {
+                    sqlconn.reqSql.Close();
                 }
             }
         }
