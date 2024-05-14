@@ -14,10 +14,27 @@ namespace gestion_Hotel
         {
             reserver rsv = new reserver();
             connexion_BD sqlconn = new connexion_BD();
-            //string idReserverS = rsv.idReserverbd;
-            //MessageBox.Show("Id : " + idReserverS);
+            sqlconn.sendConn();
+
 
             string reqGetId = "SELECT * FROM [dbo].[tReserver]";
+
+            SqlCommand commandGet = new SqlCommand(reqGetId, sqlconn.reqSql);
+
+            string idReserverS;
+
+            using (SqlDataReader rd = commandGet.ExecuteReader())
+            {
+                while (rd.Read())
+                {
+                    idReserverS = rd["idReserver"].ToString();
+
+                    MessageBox.Show("Id : " + idReserverS);
+
+                }
+            }
+
+
             string req = "UPDATE [dbo].[tReserver] SET nom=@nom, prenom=@prenom, sexe=@sexe, tel=@tel, numChambre=@numChambre, typeChambre=@typeChambre, montant=@montant, datePayement=@datePayement, datePrevu=@datePrevu, nombreJours=@nombreJours WHERE idReserver=@idReserver";
 
             SqlCommand command = new SqlCommand(req, sqlconn.reqSql);
