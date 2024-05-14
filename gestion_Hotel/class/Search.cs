@@ -47,6 +47,14 @@ namespace gestion_Hotel
 
                         dataGridView1.Rows.Add(idReserverbd, nombd, prenombd, sexebd, telbd, numChambrebd, nombreJoursbd, typeChambrebd, montantbd, datePrevubd);
 
+                        txtNom.Text = nombd;
+                        txtPrenom.Text = prenombd;
+                        txtSexe.Text = sexebd;
+                        txtPhone.Text = telbd;
+                        txtNumChambre.Text = numChambrebd;
+                        txtTypeChambre.Text = typeChambrebd;
+                        txtMontant.Text = montantbd;
+                        txtNbreJours.Text = nombreJoursbd;
                     }
                 }
             } catch (Exception exc)
