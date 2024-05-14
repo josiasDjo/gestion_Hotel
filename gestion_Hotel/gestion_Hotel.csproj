@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="class\afficherData.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="class\connexion_BD.cs" />
     <Compile Include="class\insertData.cs">
       <SubType>Form</SubType>

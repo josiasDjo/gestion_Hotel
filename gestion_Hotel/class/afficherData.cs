@@ -14,7 +14,7 @@ namespace gestion_Hotel
             connexion_BD sqlconn = new connexion_BD();
             sqlconn.sendConn();
 
-            string req = "SELECT * FROM db_reservaton";
+            string req = "SELECT * FROM tReserver";
 
             using (SqlCommand command = new SqlCommand(req, sqlconn.reqSql))
             {
@@ -36,6 +36,8 @@ namespace gestion_Hotel
                         string datePrevubd = reader["datePrevu"].ToString();
                         string nombreJoursbd = reader["nombreJours"].ToString();
 
+
+                        dataGridView1.Rows.Clear();
                         dataGridView1.Rows.Add(idReserverbd, nombd, prenombd, sexebd, telbd, numChambrebd, nombreJoursbd, typeChambrebd, montantbd, datePrevubd);
 
                     }
