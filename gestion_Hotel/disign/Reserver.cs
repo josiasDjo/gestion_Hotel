@@ -49,5 +49,10 @@ namespace gestion_Hotel
             //string searchData = searchOption.Text;
             rechercher();
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            ChangeData();
+        }
     }
 }

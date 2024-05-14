@@ -9,6 +9,7 @@ namespace gestion_Hotel
 {
     public partial class reserver
     {
+        string idReserverbd;
         public void afficherDataInGrid()
         {
             connexion_BD sqlconn = new connexion_BD();
@@ -23,7 +24,7 @@ namespace gestion_Hotel
                 {
                     while (reader.Read())
                     {
-                        string idReserverbd = reader["idReserver"].ToString();
+                        idReserverbd = reader["idReserver"].ToString();
                         string nombd = reader["nom"].ToString();
                         string prenombd = reader["prenom"].ToString();
                         string sexebd = reader["sexe"].ToString();
