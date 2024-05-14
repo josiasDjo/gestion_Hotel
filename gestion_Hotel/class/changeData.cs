@@ -13,7 +13,7 @@ namespace gestion_Hotel
         {
             connexion_BD sqlconn = new connexion_BD();
 
-            string req = "SELECT * FROM tReserver WHERE idReserver=@idReserver";
+            string req = "INSERT INTO[dbo].[tReserver] (nom, prenom, sexe, tel, numChambre, typeChambre, montant, datePayement, datePrevu, nombreJours) VALUES(@nom, @prenom, @sexe, @tel, @numChambre, @typeChambre, @montant, @datePayement, @datePrevu, @nombreJours)";
 
             SqlCommand command = new SqlCommand(req, sqlconn.reqSql);
 
