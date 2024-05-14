@@ -35,15 +35,6 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRows = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbreJoursCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeChambreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montantCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,15 +45,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSexe = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtMontant = new System.Windows.Forms.TextBox();
             this.txtNbreJours = new System.Windows.Forms.TextBox();
-            this.txtTypeChambre = new System.Windows.Forms.TextBox();
             this.txtNumChambre = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtPrenom = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtDatePrevu = new System.Windows.Forms.DateTimePicker();
+            this.txtSexe = new System.Windows.Forms.ComboBox();
+            this.txtTypeChambre = new System.Windows.Forms.ComboBox();
+            this.idRows = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbreJoursCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeChambreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montantCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datePrevuCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             this.panel4.Controls.Add(this.simpleButton3);
             this.panel4.Controls.Add(this.simpleButton2);
             this.panel4.Controls.Add(this.simpleButton1);
-            this.panel4.Location = new System.Drawing.Point(928, 31);
+            this.panel4.Location = new System.Drawing.Point(961, 31);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(313, 364);
             this.panel4.TabIndex = 37;
@@ -116,65 +118,21 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomCol,
             this.idRows,
+            this.nomCol,
             this.prenomCol,
             this.sexeCol,
             this.phoneCol,
             this.numChambre,
             this.nbreJoursCol,
             this.typeChambreCol,
-            this.montantCol});
+            this.montantCol,
+            this.datePrevuCol});
             this.dataGridView1.Location = new System.Drawing.Point(33, 470);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1208, 330);
             this.dataGridView1.TabIndex = 46;
-            // 
-            // nomCol
-            // 
-            this.nomCol.HeaderText = "Nom";
-            this.nomCol.Name = "nomCol";
-            // 
-            // idRows
-            // 
-            this.idRows.HeaderText = "N°";
-            this.idRows.Name = "idRows";
-            // 
-            // prenomCol
-            // 
-            this.prenomCol.HeaderText = "Prénom";
-            this.prenomCol.Name = "prenomCol";
-            // 
-            // sexeCol
-            // 
-            this.sexeCol.HeaderText = "Sexe";
-            this.sexeCol.Name = "sexeCol";
-            // 
-            // phoneCol
-            // 
-            this.phoneCol.HeaderText = "Phone";
-            this.phoneCol.Name = "phoneCol";
-            // 
-            // numChambre
-            // 
-            this.numChambre.HeaderText = "N° Chambre";
-            this.numChambre.Name = "numChambre";
-            // 
-            // nbreJoursCol
-            // 
-            this.nbreJoursCol.HeaderText = "Nombre de jours";
-            this.nbreJoursCol.Name = "nbreJoursCol";
-            // 
-            // typeChambreCol
-            // 
-            this.typeChambreCol.HeaderText = "Type de Chambre";
-            this.typeChambreCol.Name = "typeChambreCol";
-            // 
-            // montantCol
-            // 
-            this.montantCol.HeaderText = "Montant";
-            this.montantCol.Name = "montantCol";
             // 
             // label6
             // 
@@ -253,7 +211,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Location = new System.Drawing.Point(0, 217);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(932, 33);
+            this.panel2.Size = new System.Drawing.Size(962, 33);
             this.panel2.TabIndex = 36;
             // 
             // panel1
@@ -261,15 +219,8 @@
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1241, 33);
+            this.panel1.Size = new System.Drawing.Size(1274, 33);
             this.panel1.TabIndex = 35;
-            // 
-            // txtSexe
-            // 
-            this.txtSexe.Location = new System.Drawing.Point(555, 77);
-            this.txtSexe.Name = "txtSexe";
-            this.txtSexe.Size = new System.Drawing.Size(370, 26);
-            this.txtSexe.TabIndex = 33;
             // 
             // txtPhone
             // 
@@ -291,13 +242,6 @@
             this.txtNbreJours.Name = "txtNbreJours";
             this.txtNbreJours.Size = new System.Drawing.Size(370, 26);
             this.txtNbreJours.TabIndex = 30;
-            // 
-            // txtTypeChambre
-            // 
-            this.txtTypeChambre.Location = new System.Drawing.Point(555, 301);
-            this.txtTypeChambre.Name = "txtTypeChambre";
-            this.txtTypeChambre.Size = new System.Drawing.Size(370, 26);
-            this.txtTypeChambre.TabIndex = 29;
             // 
             // txtNumChambre
             // 
@@ -326,11 +270,94 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // txtDatePrevu
+            // 
+            this.txtDatePrevu.Location = new System.Drawing.Point(89, 424);
+            this.txtDatePrevu.Name = "txtDatePrevu";
+            this.txtDatePrevu.Size = new System.Drawing.Size(370, 26);
+            this.txtDatePrevu.TabIndex = 48;
+            // 
+            // txtSexe
+            // 
+            this.txtSexe.FormattingEnabled = true;
+            this.txtSexe.Items.AddRange(new object[] {
+            "Masculin",
+            "Féminin"});
+            this.txtSexe.Location = new System.Drawing.Point(555, 77);
+            this.txtSexe.Name = "txtSexe";
+            this.txtSexe.Size = new System.Drawing.Size(370, 28);
+            this.txtSexe.TabIndex = 49;
+            // 
+            // txtTypeChambre
+            // 
+            this.txtTypeChambre.FormattingEnabled = true;
+            this.txtTypeChambre.Items.AddRange(new object[] {
+            "VIP ",
+            "Standard"});
+            this.txtTypeChambre.Location = new System.Drawing.Point(555, 301);
+            this.txtTypeChambre.Name = "txtTypeChambre";
+            this.txtTypeChambre.Size = new System.Drawing.Size(370, 28);
+            this.txtTypeChambre.TabIndex = 50;
+            this.txtTypeChambre.SelectedIndexChanged += new System.EventHandler(this.txtTypeChambre_SelectedIndexChanged);
+            // 
+            // idRows
+            // 
+            this.idRows.HeaderText = "N°";
+            this.idRows.Name = "idRows";
+            // 
+            // nomCol
+            // 
+            this.nomCol.HeaderText = "Nom";
+            this.nomCol.Name = "nomCol";
+            // 
+            // prenomCol
+            // 
+            this.prenomCol.HeaderText = "Prénom";
+            this.prenomCol.Name = "prenomCol";
+            // 
+            // sexeCol
+            // 
+            this.sexeCol.HeaderText = "Sexe";
+            this.sexeCol.Name = "sexeCol";
+            // 
+            // phoneCol
+            // 
+            this.phoneCol.HeaderText = "Phone";
+            this.phoneCol.Name = "phoneCol";
+            // 
+            // numChambre
+            // 
+            this.numChambre.HeaderText = "N° Chambre";
+            this.numChambre.Name = "numChambre";
+            // 
+            // nbreJoursCol
+            // 
+            this.nbreJoursCol.HeaderText = "Nombre de jours";
+            this.nbreJoursCol.Name = "nbreJoursCol";
+            // 
+            // typeChambreCol
+            // 
+            this.typeChambreCol.HeaderText = "Type de Chambre";
+            this.typeChambreCol.Name = "typeChambreCol";
+            // 
+            // montantCol
+            // 
+            this.montantCol.HeaderText = "Montant";
+            this.montantCol.Name = "montantCol";
+            // 
+            // datePrevuCol
+            // 
+            this.datePrevuCol.HeaderText = "Date Prévue";
+            this.datePrevuCol.Name = "datePrevuCol";
+            // 
             // reserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 824);
+            this.Controls.Add(this.txtTypeChambre);
+            this.Controls.Add(this.txtSexe);
+            this.Controls.Add(this.txtDatePrevu);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dataGridView1);
@@ -344,11 +371,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtSexe);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtMontant);
             this.Controls.Add(this.txtNbreJours);
-            this.Controls.Add(this.txtTypeChambre);
             this.Controls.Add(this.txtNumChambre);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtPrenom);
@@ -369,15 +394,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRows;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenomCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numChambre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbreJoursCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeChambreCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montantCol;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -388,14 +404,25 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtSexe;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtMontant;
         private System.Windows.Forms.TextBox txtNbreJours;
-        private System.Windows.Forms.TextBox txtTypeChambre;
         private System.Windows.Forms.TextBox txtNumChambre;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DateTimePicker txtDatePrevu;
+        private System.Windows.Forms.ComboBox txtSexe;
+        private System.Windows.Forms.ComboBox txtTypeChambre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRows;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenomCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numChambre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbreJoursCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeChambreCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montantCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datePrevuCol;
     }
 }

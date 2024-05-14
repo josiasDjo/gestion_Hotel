@@ -15,27 +15,33 @@ namespace gestion_Hotel
         public reserver()
         {
             InitializeComponent();
+            afficherDataInGrid();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
-            getData();
+            getDataTwo();
             //ajouter des utilisateurs !!!  
         }
-        public void getData()
+
+        private void txtTypeChambre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string nom = txtNom.Text;
-            string prenom = txtPrenom.Text;
-            string sexe = txtSexe.Text;
-            string phone = txtPhone.Text;
-            int numChambre = int.Parse(txtNumChambre.Text);
             string typeChambre = txtTypeChambre.Text;
             int nombreJours = int.Parse(txtNbreJours.Text);
-            decimal montant = decimal.Parse(txtMontant.Text);
+            
 
-            MessageBox.Show("Reussi !!!! ");
-
+            if (typeChambre == "Standard")
+            {
+                int resultat = 15 * nombreJours;
+                txtMontant.Text = resultat.ToString();
+            } else if (typeChambre == "VIP")
+            {
+                int resultat = 25 * nombreJours;
+                txtMontant.Text = resultat.ToString();
+            } else
+            {
+                txtMontant.Text = "Choisisez entre VIP et Standard";
+            }
         }
     }
 }
